@@ -1,9 +1,7 @@
-from conftest import DRIVERS
 from selenium import webdriver
 
-chrome = webdriver.Chrome(executable_path=DRIVERS + "/chromedriver")
+chrome = webdriver.Chrome()
 
-chrome.implicitly_wait(5)
 chrome.get("https://yandex.ru")
 
 # search_input это объект типа WebElement

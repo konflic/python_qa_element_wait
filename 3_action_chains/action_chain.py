@@ -2,9 +2,8 @@ import random
 
 from selenium.webdriver import ActionChains
 from selenium import webdriver
-from conftest import DRIVERS
 
-chrome = webdriver.Chrome(executable_path=DRIVERS + "/chromedriver")
+chrome = webdriver.Chrome()
 
 chrome.implicitly_wait(20)
 chrome.maximize_window()
@@ -32,10 +31,10 @@ for i in range(20):
     # Нажимаем на кнопку мыши в этих координатах и не отпускаем
     actions.move_to_element_with_offset(draw_area, random_x, random_y).click_and_hold()
     # Определяем случайные величины для смешения курсора от текущей точки
-    offset_x = random.randint(-150, 200)
-    offset_y = random.randint(-200, 150)
+    offset_x = random.randint(-150, 250)
+    offset_y = random.randint(-200, 250)
     # Выполняем движение мышью на заданное количество пикселей и отпускаем
-    actions.move_by_offset(offset_x, offset_y).release()
+    actions.move_by_offset(offset_x, offset_y)
 
 # Выполняем все накопленные в цикле for действия начиная с первого
-actions.perform()
+actions.release().perform()

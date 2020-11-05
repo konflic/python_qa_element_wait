@@ -1,12 +1,10 @@
 import time
 
-from conftest import DRIVERS
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-chrome = webdriver.Chrome(executable_path=DRIVERS + "/chromedriver")
+chrome = webdriver.Chrome()
 
-chrome.implicitly_wait(5)
 chrome.get("https://konflic.github.io/front_example/")
 
 input_field = chrome.find_element_by_id("inp")
