@@ -10,6 +10,7 @@ def test_disabled_button(browser):
 
     # Сначала проверяем клик по задизейбленой кнопке
     dis_btn = browser.find_element_by_id("disabled")
+
     dis_btn.click()
 
     time.sleep(1)  # Для демонстрации
