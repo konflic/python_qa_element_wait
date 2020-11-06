@@ -39,4 +39,5 @@ input_field.send_keys(Keys.ENTER)
 
 upload_field = chrome.find_element_by_id("file-uploader")
 
+# Передача АБСОЛЮТНОГО пути в системе до файла
 upload_field.send_keys(os.path.abspath("picture.png"))
