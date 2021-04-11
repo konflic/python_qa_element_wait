@@ -1,9 +1,7 @@
-import logging
-
 from selenium.webdriver import ActionChains
 
 
-def test_d_and_d(browser):
+def test_drag_and_drop(browser):
 
     browser.get("https://konflic.github.io/front_example/pages/draganddrop.html")
     browser.maximize_window()

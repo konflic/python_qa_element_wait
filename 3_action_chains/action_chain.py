@@ -6,23 +6,19 @@ from selenium import webdriver
 
 chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
+# Долгое открытие страницы
 chrome.implicitly_wait(20)
 chrome.maximize_window()
 
 # Открываем страницу и закрываем поп-ап
 chrome.get("https://sketch.io/sketchpad/en/")
-chrome.find_element_by_css_selector(".welcome-message > .close-button").click()
+chrome.find_element_by_css_selector(".alertify-message .close-button").click()
 
 # Получаем облассть в которой можно рисовать
-draw_area = chrome.find_element_by_tag_name("sketch-viewport")
+draw_area = chrome.find_element_by_tag_name("sketch-docviewport")
 
 # Создаем объект ActionChains в который будем записывать наши действия
 actions = ActionChains(chrome)
-
-# Меняем кисть на карандаш
-chrome.find_element_by_css_selector("grid-view-trigger").click()
-chrome.find_element_by_xpath("//grid-title[text()='Pencil']").click()
-
 
 # Наполняем actions 10 разными действиями
 for i in range(20):
