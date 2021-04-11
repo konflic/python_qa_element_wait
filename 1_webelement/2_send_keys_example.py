@@ -1,9 +1,10 @@
 import time
 
+from config import CHROMEDRIVER
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-chrome = webdriver.Chrome()
+chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
 chrome.get("https://konflic.github.io/front_example/")
 

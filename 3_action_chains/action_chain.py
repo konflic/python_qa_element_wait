@@ -1,9 +1,10 @@
 import random
 
+from config import CHROMEDRIVER
 from selenium.webdriver import ActionChains
 from selenium import webdriver
 
-chrome = webdriver.Chrome()
+chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
 chrome.implicitly_wait(20)
 chrome.maximize_window()

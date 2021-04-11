@@ -1,6 +1,7 @@
 from selenium import webdriver
+from config import GECKODRIVER
 
-firefox = webdriver.Firefox()
+firefox = webdriver.Firefox(executable_path=GECKODRIVER)
 firefox.implicitly_wait(5)
 firefox.get("https://yandex.ru")
 
