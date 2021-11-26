@@ -8,7 +8,7 @@ chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
 chrome.get("https://konflic.github.io/front_example/")
 
-input_field = chrome.find_element_by_id("inp")
+input_field = chrome.find_element(value="inp")
 
 input_field.send_keys("Hello, my dear friend!")
 

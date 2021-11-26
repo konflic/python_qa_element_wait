@@ -9,7 +9,7 @@ chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
 chrome.get("https://konflic.github.io/front_example/editor/index.html")
 
-input_field = chrome.find_element_by_id("editor_text")
+input_field = chrome.find_element(value="editor_text")
 
 input_field.send_keys("Левый марш.")
 
@@ -38,7 +38,7 @@ input_field.send_keys("В. В. Маяковский.")
 
 input_field.send_keys(Keys.ENTER)
 
-upload_field = chrome.find_element_by_id("file-uploader")
+upload_field = chrome.find_element(value="file-uploader")
 
 # Передача АБСОЛЮТНОГО пути в системе до файла
 upload_field.send_keys(os.path.abspath("picture.png"))

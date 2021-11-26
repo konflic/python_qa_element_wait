@@ -1,4 +1,5 @@
 import random
+import time
 
 from config import CHROMEDRIVER
 from selenium.webdriver import ActionChains

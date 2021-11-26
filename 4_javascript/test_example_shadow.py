@@ -1,3 +1,6 @@
+from selenium.webdriver.common.by import By
+
+# Не работает в интерактивном режиме!
 def test_disabled_button(browser):
     browser.get("https://konflic.github.io/front_example/pages/shadow.html")
 
@@ -6,12 +9,10 @@ def test_disabled_button(browser):
     # button.click()
 
     # Используем js
-    # def shadow_element(element):
-    #     shadow_root = browser.execute_script('return arguments[0].shadowRoot', element)
-    #     return shadow_root
-    #
-    # shadow = shadow_element(browser.find_element_by_css_selector("#elem"))
-    # inner = shadow.find_element_by_css_selector("#button")
-    # inner.click()
+    def shadow_element(element, locator):
+        return browser.execute_script('return arguments[0].shadowRoot.querySelector("{}")'.format(locator), element)
+
+    btn = shadow_element(element=browser.find_element_by_css_selector("#elem"), locator="#button")
+    btn.click()
 
     assert browser.find_element_by_css_selector("body > div").text == "SHADOW!"
