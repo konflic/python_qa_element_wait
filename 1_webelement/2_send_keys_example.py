@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 
 chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
-chrome.get("https://konflic.github.io/front_example/")
+chrome.get("https://konflic.github.io/examples/")
 
 input_field = chrome.find_element(value="inp")
 

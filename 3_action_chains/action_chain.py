@@ -1,5 +1,5 @@
 import random
-import time
+from selenium.webdriver.common.by import By
 
 from config import CHROMEDRIVER
 from selenium.webdriver import ActionChains
@@ -13,10 +13,10 @@ chrome.maximize_window()
 
 # Открываем страницу и закрываем поп-ап
 chrome.get("https://sketch.io/sketchpad/en/")
-chrome.find_element_by_css_selector(".alertify-message .close-button").click()
+chrome.find_element(By.CSS_SELECTOR, ".alertify-message .close-button").click()
 
 # Получаем облассть в которой можно рисовать
-draw_area = chrome.find_element_by_tag_name("sketch-docviewport")
+draw_area = chrome.find_element(By.CSS_SELECTOR, "sketch-docviewport")
 
 # Создаем объект ActionChains в который будем записывать наши действия
 actions = ActionChains(chrome)
@@ -28,6 +28,7 @@ for i in range(20):
     random_y = random.randint(300, 700)
     # Нажимаем на кнопку мыши в этих координатах и не отпускаем
     actions.move_to_element_with_offset(draw_area, random_x, random_y).click_and_hold()
+    actions.pause(0.5)
     # Определяем случайные величины для смешения курсора от текущей точки
     offset_x = random.randint(-150, 250)
     offset_y = random.randint(-200, 250)

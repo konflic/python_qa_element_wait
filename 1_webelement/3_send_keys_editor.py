@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 
 chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
 
-chrome.get("https://konflic.github.io/front_example/editor/index.html")
+chrome.get("https://konflic.github.io/examples/editor/index.html")
 
 input_field = chrome.find_element(value="editor_text")
 
