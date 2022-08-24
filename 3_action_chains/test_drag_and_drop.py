@@ -3,7 +3,7 @@ from selenium.webdriver import ActionChains
 
 def test_drag_and_drop(browser):
 
-    browser.get("https://konflic.github.io/front_example/pages/draganddrop.html")
+    browser.get("https://konflic.github.io/examples/pages/draganddrop.html")
     browser.maximize_window()
 
     actions = ActionChains(browser)

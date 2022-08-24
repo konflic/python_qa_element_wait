@@ -5,7 +5,7 @@ firefox = webdriver.Firefox(executable_path=GECKODRIVER)
 firefox.implicitly_wait(5)
 firefox.get("https://yandex.ru")
 
-home_tabs = firefox.find_element_by_css_selector("#text")
+home_tabs = firefox.find_element(value="text")
 
 # Получаем значение свойства innerHTML
 html = home_tabs.get_property("innerHTML")

@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def test_disabled_button(browser):
-    browser.get("https://konflic.github.io/front_example")
+    browser.get("https://konflic.github.io/examples/")
     browser.maximize_window()
 
     # Сначала проверяем клик по задизейбленой кнопке
