@@ -12,11 +12,10 @@ chrome.implicitly_wait(20)
 chrome.maximize_window()
 
 # Открываем страницу и закрываем поп-ап
-chrome.get("https://sketch.io/sketchpad/en/")
-chrome.find_element(By.CSS_SELECTOR, ".alertify-message .close-button").click()
+chrome.get("https://konflic.github.io/examples/drawdivs/index.html")
 
 # Получаем облассть в которой можно рисовать
-draw_area = chrome.find_element(By.CSS_SELECTOR, "sketch-docviewport")
+draw_area = chrome.find_element(By.CSS_SELECTOR, "#board")
 
 # Создаем объект ActionChains в который будем записывать наши действия
 actions = ActionChains(chrome)
@@ -34,6 +33,7 @@ for i in range(20):
     offset_y = random.randint(-200, 250)
     # Выполняем движение мышью на заданное количество пикселей и отпускаем
     actions.move_by_offset(offset_x, offset_y)
+    actions.release()
 
 # Выполняем все накопленные в цикле for действия начиная с первого
-actions.release().perform()
+actions.perform()
