@@ -9,14 +9,14 @@ def test_disabled_button(browser):
     browser.maximize_window()
 
     # Сначала проверяем клик по задизейбленой кнопке
-    dis_btn = browser.find_element_by_id("disabled")
+    dis_btn = browser.find_element(value="disabled")
 
     dis_btn.click()
 
     time.sleep(1)  # Для демонстрации
 
     # Проверяем что не видна модалка
-    WebDriverWait(browser, 3).until_not(EC.visibility_of(browser.find_element_by_id("myModal")))
+    WebDriverWait(browser, 3).until_not(EC.visibility_of(browser.find_element(value="myModal")))
 
     #  Убираем атрибут через js и проверяем
     js_code = "$('#disabled')[0].disabled = false;"
@@ -29,4 +29,4 @@ def test_disabled_button(browser):
     time.sleep(1)  # Для демонстрации
 
     # Проверяем что видна модалка
-    WebDriverWait(browser, 3).until(EC.visibility_of(browser.find_element_by_id("myModal")))
+    WebDriverWait(browser, 3).until(EC.visibility_of(browser.find_element(value="myModal")))

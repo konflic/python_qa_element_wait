@@ -13,8 +13,8 @@ def test_drag_and_drop(browser):
         card_id = "card{}".format(i)
         zone_id = "zone{}".format(i)
         # Нахожу нужные элементы
-        card_element = browser.find_element_by_id(card_id)
-        zone_element = browser.find_element_by_id(zone_id)
+        card_element = browser.find_element(value=card_id)
+        zone_element = browser.find_element(value=zone_id)
         # Создаю действие
         actions.click_and_hold(card_element).pause(0.5).move_to_element(zone_element).release()
 
