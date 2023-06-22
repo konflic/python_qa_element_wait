@@ -1,9 +1,7 @@
 from selenium.webdriver.common.by import By
-
-from config import CHROMEDRIVER
 from selenium import webdriver
 
-chrome = webdriver.Chrome(executable_path=CHROMEDRIVER)
+chrome = webdriver.Chrome()
 
 chrome.get("https://yandex.ru")
 

@@ -1,8 +1,6 @@
 from selenium import webdriver
-from config import GECKODRIVER
 
-firefox = webdriver.Firefox(executable_path=GECKODRIVER)
-firefox.implicitly_wait(5)
+firefox = webdriver.Firefox()
 firefox.get("https://yandex.ru")
 
 home_tabs = firefox.find_element(value="text")

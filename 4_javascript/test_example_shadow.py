@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 # Не работает в интерактивном режиме!
 def test_disabled_button(browser):
     browser.get("https://konflic.github.io/examples/pages/shadow.html")
