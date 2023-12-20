@@ -1,2 +1,2 @@
-from .MainPage import MainPage
 from .CatalogPage import CatalogPage
+from .MainPage import MainPage

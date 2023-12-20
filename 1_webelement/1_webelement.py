@@ -3,7 +3,7 @@ from selenium import webdriver
 
 chrome = webdriver.Chrome()
 
-chrome.get("https://yandex.ru")
+chrome.get("https://ya.ru")
 
 # search_input это объект типа WebElement
 search_input = chrome.find_element(By.CSS_SELECTOR, "input#text")

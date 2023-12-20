@@ -2,5 +2,5 @@ from .CommonSelectors import css
 
 
 class CatalogPage:
-    select_sort = (css, "#input-sort")
-    select_limit = (css, "#input-limit")
+    SELECT_SORT = (css, "#input-sort")
+    SELECT_LIMIT = (css, "#input-limit")
